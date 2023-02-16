@@ -8,7 +8,7 @@ version: 2.1
 jobs:
   swiftlint:
     docker:
-        - image: slicelife/swiftlint:latest
+        - image: ghcr.io/ciaranmul/swiftlintdocker:latest
     steps:
         - checkout
         - run: swiftlint lint --reporter html | tee swiftlint.result.html
@@ -19,7 +19,7 @@ jobs:
 ## Running Locally
 
 ```
-docker run -v `pwd`:`pwd` -w `pwd` slicelife/swiftlint swiftlint lint
+docker run -v `pwd`:`pwd` -w `pwd` ghcr.io/ciaranmul/swiftlintdocker swiftlint lint
 ```
 
 # About The Image
